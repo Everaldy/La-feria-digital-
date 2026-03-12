@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feria Digital Agropecuaria</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Feria Digital Agropecuaria</h1>
+  <p>Explora cultivos, fotos, historias y contáctanos.</p>
+</header>
+
+<main class="contenedor">
+
+<!-- VISTA PRINCIPAL -->
+<section id="vista-inicio" class="vista activa">
+  <div class="grid-botones">
+    <button class="btn" data-vista="cultivo">Tipo de cultivo</button>
+    <button class="btn" data-vista="galeria">Galería de fotos</button>
+    <button class="btn" data-vista="historias">Historias</button>
+    <button class="btn" data-vista="inscripcion">Inscripción</button>
+    <button class="btn btn-principal" data-vista="contacto">Contacto</button>
+  </div>
+</section>
+
+<!-- CULTIVOS -->
+<section id="vista-cultivo" class="vista">
+  <h2>Tipo de cultivo</h2>
+
+  <div class="grid-botones">
+    <button class="btn" onclick="mostrarCafe()">Café</button>
+    <button class="btn" onclick="mostrarCacao()">Cacao</button>
+    <button class="btn" onclick="mostrarPlatano()">Plátano</button>
+    <button class="btn" onclick="mostrarAguacate()">Aguacate</button>
+    <button class="btn" onclick="mostrarMango()">Mango</button>
+  </div>
+
+  <div id="info-cultivo"></div>
+
+  <button class="btn-volver">← Volver</button>
+</section>
+<!-- GALERIA -->
+<section id="vista-galeria" class="vista">
+  <h2>Galería de fotos</h2>
+  <p>Después puedes agregar imágenes del proyecto.</p>
+
+  <img src="img/cafe.jpg" alt="Cultivo de café">
+  <img src="img/cafe1.jpg" alt="Cultivo de café">
+  <img src="img/cafe2.jpg" alt="Cultivo de café">
+  <img src="img/cacao.jpg" alt="Cultivo de cacao">
+  <img src="img/platano.jpg" alt="Cultivo de plátano">
+  <img src="img/aguacate.jpg" alt="Cultivo de aguacate">
+  <img src="img/mango.jpg" alt="Cultivo de mango">
+
+
+
+  <button class="btn-volver">← Volver</button>
+</section>
+
+<!-- HISTORIAS -->
+<section id="vista-historias" class="vista">
+  <h2>Historias</h2>
+  <p>Aquí puedes contar historias de la vereda o de los productores.</p>
+
+  <button class="btn-volver">← Volver</button>
+</section>
+
+<!-- INSCRIPCION -->
+<section id="vista-inscripcion" class="vista">
+
+<h2>Inscripción</h2>
+
+<form id="formulario" class="formulario">
+
+<div class="campo">
+<label>Nombre</label>
+<input type="text" id="nombre" required>
+</div>
+
+<div class="campo">
+<label>Edad</label>
+<input type="number" id="edad" required>
+</div>
+
+<div class="campo">
+<label>Número de contacto</label>
+<input type="text" id="contacto" required>
+</div>
+
+<button type="submit" class="btn">Enviar</button>
+
+</form>
+
+<p id="mensaje"></p>
+
+<button class="btn-volver">← Volver</button>
+
+</section>
+
+<!-- CONTACTO -->
+<section id="vista-contacto" class="vista">
+  <h2>Contacto</h2>
+
+  <div class="tarjeta">
+    <p><strong>Nombre:</strong> Everaldy Ayala Usuga</p>
+    <p><strong>Correo:</strong> everaldya@gmail.com</p>
+    <p><strong>Celular:</strong> +57 3112361741</p>
+    <p><strong>Ubicación:</strong> Santa Barbara, Antioquia</p>
+  </div>
+
+  <div class="acciones">
+    <a class="btn-link" href="mailto:everaldya@gmail.com">Enviar correo</a>
+    <a class="btn-link" href="https://wa.me/573112361741" target="_blank">WhatsApp</a>
+  </div>
+
+  <button class="btn-volver">← Volver</button>
+</section>
+
+</main>
+
+<footer class="footer">
+  <small>© Feria Digital Agropecuaria</small>
+</footer>
+
+<script src="funciones.js"></script>
+
+</body>
+</html> 
