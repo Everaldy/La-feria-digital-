@@ -1,23 +1,31 @@
+// ===============================
+// ESPERAR QUE CARGUE EL DOCUMENTO
+// ===============================
 document.addEventListener("DOMContentLoaded", function(){
 
-// TODAS LAS VISTAS
+// ===============================
+// MANEJO DE VISTAS
+// ===============================
+
+// Obtener todas las vistas
 const vistas = document.querySelectorAll(".vista");
 
-// BOTONES DEL MENU
+// Botones del menú principal
 const botones = document.querySelectorAll(".btn[data-vista]");
 
+// Cambiar de vista al presionar un botón
 botones.forEach(function(boton){
 
 boton.addEventListener("click", function(){
 
 let destino = boton.getAttribute("data-vista");
 
-// ocultar todas las vistas
+// Ocultar todas las vistas
 vistas.forEach(function(vista){
 vista.classList.remove("activa");
 });
 
-// mostrar la vista seleccionada
+// Mostrar la vista seleccionada
 let seccion = document.getElementById("vista-" + destino);
 
 if(seccion){
@@ -29,17 +37,22 @@ seccion.classList.add("activa");
 });
 
 
-// BOTONES VOLVER
+// ===============================
+// BOTONES VOLVER AL INICIO
+// ===============================
+
 const botonesVolver = document.querySelectorAll(".btn-volver");
 
 botonesVolver.forEach(function(boton){
 
 boton.addEventListener("click", function(){
 
+// Ocultar todas las vistas
 vistas.forEach(function(vista){
 vista.classList.remove("activa");
 });
 
+// Mostrar vista principal
 document.getElementById("vista-inicio").classList.add("activa");
 
 });
@@ -47,7 +60,10 @@ document.getElementById("vista-inicio").classList.add("activa");
 });
 
 
-// FORMULARIO
+// ===============================
+// VALIDACIÓN DEL FORMULARIO
+// ===============================
+
 const formulario = document.getElementById("formulario");
 
 if(formulario){
@@ -60,18 +76,21 @@ let edad = document.getElementById("edad").value;
 let contacto = document.getElementById("contacto").value;
 let mensaje = document.getElementById("mensaje");
 
+// Validar edad
 if(edad <= 12){
 mensaje.textContent="Error: la edad debe ser mayor a 12";
 mensaje.style.color="red";
 return;
 }
 
+// Validar número de contacto
 if(contacto.length != 10){
 mensaje.textContent="Error: el contacto debe tener 10 dígitos";
 mensaje.style.color="red";
 return;
 }
 
+// Mensaje de éxito
 mensaje.textContent="Inscripción realizada correctamente";
 mensaje.style.color="green";
 
@@ -80,6 +99,13 @@ mensaje.style.color="green";
 }
 
 });
+
+
+// ===============================
+// FUNCIONES DE CULTIVOS
+// ===============================
+
+// Mostrar información del café
 function mostrarCafe(){
 
 document.getElementById("info-cultivo").innerHTML = `
@@ -97,6 +123,7 @@ El café es uno de los cultivos más importantes de Colombia.
 
 }
 
+// Mostrar información del cacao
 function mostrarCacao(){
 
 document.getElementById("info-cultivo").innerHTML = `
@@ -106,8 +133,6 @@ document.getElementById("info-cultivo").innerHTML = `
 <img src="img/cacao1.jpg" width="300">
 <img src="img/cacao2.jpg" width="300">
 
-
-
 <p>
 El cacao es el fruto del cual se obtiene el chocolate.
 </p>
@@ -116,6 +141,7 @@ El cacao es el fruto del cual se obtiene el chocolate.
 
 }
 
+// Mostrar información del plátano
 function mostrarPlatano(){
 
 document.getElementById("info-cultivo").innerHTML = `
@@ -125,7 +151,6 @@ document.getElementById("info-cultivo").innerHTML = `
 <img src="img/platano1.jpg" width="300">
 <img src="img/platano2.jpg" width="300">
 
-
 <p>
 El plátano es un alimento básico en muchas regiones de Colombia.
 </p>
@@ -134,6 +159,7 @@ El plátano es un alimento básico en muchas regiones de Colombia.
 
 }
 
+// Mostrar información del aguacate
 function mostrarAguacate(){
 
 document.getElementById("info-cultivo").innerHTML = `
@@ -143,7 +169,6 @@ document.getElementById("info-cultivo").innerHTML = `
 <img src="img/aguacate1.jpg" width="300">
 <img src="img/aguacate2.jpg" width="300">
 
-
 <p>
 El aguacate es un fruto muy nutritivo y cultivado en muchas zonas del país.
 </p>
@@ -152,6 +177,7 @@ El aguacate es un fruto muy nutritivo y cultivado en muchas zonas del país.
 
 }
 
+// Mostrar información del mango
 function mostrarMango(){
 
 document.getElementById("info-cultivo").innerHTML = `
@@ -160,8 +186,6 @@ document.getElementById("info-cultivo").innerHTML = `
 <img src="img/mango.jpg" width="300">
 <img src="img/mango1.jpg" width="300">
 <img src="img/mango2.jpg" width="300">
-
-
 
 <p>
 El mango es una fruta tropical muy dulce y popular en climas cálidos.

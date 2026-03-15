@@ -9,27 +9,53 @@
 
 <body>
 
+<!-- ENCABEZADO DEL SITIO -->
 <header class="header">
   <h1>Feria Digital Agropecuaria</h1>
   <p>Explora cultivos, fotos, historias y contáctanos.</p>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav>
+    <ul class="menu">
+      <nav>
+<ul class="menu">
+
+<nav>
+<ul class="menu">
+
+<li><a href="#vista-inicio">Inicio</a></li>
+
+<li><a href="#vista-cultivo">Cultivos</a></li>
+
+<li><a href="#vista-galeria">Galería</a></li>
+
+<li><a href="#vista-historias">Historias</a></li>
+
+<li><a href="#vista-inscripcion">Inscripción</a></li>
+
+<li><a href="#vista-contacto">Contacto</a></li>
+
+</ul>
+</nav>
 </header>
 
+<!-- CONTENIDO PRINCIPAL -->
 <main class="contenedor">
 
-<!-- VISTA PRINCIPAL -->
 <section id="vista-inicio" class="vista activa">
-  <div class="grid-botones">
-    <button class="btn" data-vista="cultivo">Tipo de cultivo</button>
-    <button class="btn" data-vista="galeria">Galería de fotos</button>
-    <button class="btn" data-vista="historias">Historias</button>
-    <button class="btn" data-vista="inscripcion">Inscripción</button>
-    <button class="btn btn-principal" data-vista="contacto">Contacto</button>
-  </div>
+
+<h2>Bienvenido a la Feria Digital Agropecuaria</h2>
+
+<p>
+Explora los cultivos, mira la galería, conoce historias de productores
+y regístrate en nuestra feria digital.
+</p>
+
 </section>
 
-<!-- CULTIVOS -->
+<!-- SECCIÓN CULTIVOS -->
 <section id="vista-cultivo" class="vista">
-  <h2>Tipo de cultivo</h2>
+  <h2>Tipos de cultivo</h2>
 
   <div class="grid-botones">
     <button class="btn" onclick="mostrarCafe()">Café</button>
@@ -39,40 +65,61 @@
     <button class="btn" onclick="mostrarMango()">Mango</button>
   </div>
 
-  <div id="info-cultivo"></div>
+  <article id="info-cultivo">
+    <!-- Aquí aparece la información del cultivo -->
+  </article>
 
   <button class="btn-volver">← Volver</button>
 </section>
-<!-- GALERIA -->
+
+<!-- GALERÍA -->
 <section id="vista-galeria" class="vista">
   <h2>Galería de fotos</h2>
-  <p>Después puedes agregar imágenes del proyecto.</p>
+  <p>Imágenes de algunos cultivos de la región.</p>
 
-  <img src="img/cafe.jpg" alt="Cultivo de café">
-  <img src="img/cafe1.jpg" alt="Cultivo de café">
-  <img src="img/cafe2.jpg" alt="Cultivo de café">
-  <img src="img/cacao.jpg" alt="Cultivo de cacao">
-  <img src="img/platano.jpg" alt="Cultivo de plátano">
-  <img src="img/aguacate.jpg" alt="Cultivo de aguacate">
-  <img src="img/mango.jpg" alt="Cultivo de mango">
+  <article class="galeria">
 
+    <img src="img/cafe.jpg" alt="Cultivo de café">
+    <img src="img/cafe1.jpg" alt="Cultivo de café">
+    <img src="img/cafe2.jpg" alt="Cultivo de café">
+    <img src="img/cacao.jpg" alt="Cultivo de cacao">
+    <img src="img/platano.jpg" alt="Cultivo de plátano">
+    <img src="img/aguacate.jpg" alt="Cultivo de aguacate">
+    <img src="img/mango.jpg" alt="Cultivo de mango">
 
+  </article>
 
   <button class="btn-volver">← Volver</button>
 </section>
 
 <!-- HISTORIAS -->
 <section id="vista-historias" class="vista">
-  <h2>Historias</h2>
-  <p>Aquí puedes contar historias de la vereda o de los productores.</p>
+  <h2>Historias de productores</h2>
 
-  <button class="btn-volver">← Volver</button>
+  <article>
+    <h3>Experiencias rurales</h3>
+     <div class="historias">
+    <article class="historia">
+      <h3>La historia de Don José</h3>
+      <p>Don José lleva más de 20 años cultivando café en la vereda. Desde muy joven aprendió de su padre las técnicas tradicionales de siembra y cosecha, y con el tiempo fue perfeccionando sus métodos. Cada mañana, antes del amanecer, recorre sus parcelas revisando las plantas, asegurándose de que reciban el cuidado adecuado.
+
+Lo que más le apasiona a Don José es compartir sus conocimientos con los más jóvenes del pueblo. A menudo organiza pequeñas charlas y demostraciones, mostrando cómo seleccionar los granos más maduros y cómo secarlos al sol para conservar todo su aroma y sabor.
+
+Para él, el café no es solo un cultivo: es historia, tradición y orgullo. Cada taza que se sirve en la comunidad lleva consigo el esfuerzo de Don José y la memoria de generaciones que han trabajado la tierra con dedicación y amor.</p>
+    </article>
+    <article class="historia">
+      <h3>La huerta comunitaria</h3>
+      <p>En la vereda, un grupo de productores se unió para cultivar verduras y frutas de manera sostenible, enseñando a los más jóvenes.</p>
+    </article>
+  </div>
 </section>
 
-<!-- INSCRIPCION -->
+<!-- INSCRIPCIÓN -->
 <section id="vista-inscripcion" class="vista">
 
-<h2>Inscripción</h2>
+<h2>Formulario de inscripción</h2>
+
+<article>
 
 <form id="formulario" class="formulario">
 
@@ -97,6 +144,8 @@
 
 <p id="mensaje"></p>
 
+</article>
+
 <button class="btn-volver">← Volver</button>
 
 </section>
@@ -105,12 +154,12 @@
 <section id="vista-contacto" class="vista">
   <h2>Contacto</h2>
 
-  <div class="tarjeta">
+  <article class="tarjeta">
     <p><strong>Nombre:</strong> Everaldy Ayala Usuga</p>
     <p><strong>Correo:</strong> everaldya@gmail.com</p>
     <p><strong>Celular:</strong> +57 3112361741</p>
     <p><strong>Ubicación:</strong> Santa Barbara, Antioquia</p>
-  </div>
+  </article>
 
   <div class="acciones">
     <a class="btn-link" href="mailto:everaldya@gmail.com">Enviar correo</a>
@@ -122,6 +171,7 @@
 
 </main>
 
+<!-- PIE DE PÁGINA -->
 <footer class="footer">
   <small>© Feria Digital Agropecuaria</small>
 </footer>
@@ -129,4 +179,4 @@
 <script src="funciones.js"></script>
 
 </body>
-</html> 
+</html>
