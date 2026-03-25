@@ -47,17 +47,49 @@ La carpeta **img** contiene las imágenes utilizadas en la página.
 
 ---
 
-## Autor
+## Autores
 
 Proyecto realizado por:
 
 **Everaldy Ayala Usuga**
-
-Santa Bárbara, Antioquia
-Correo: [everaldya@gmail.com](mailto:everaldya@gmail.com)
+**Alejandra Valencia Villa**
+**Alejandro Velasquez Machado**
 
 ---
 
 ## Objetivo del proyecto
 
 El objetivo principal fue aprender a crear una página web interactiva utilizando tecnologías básicas de desarrollo web y mostrar información sobre productos del sector agropecuario.
+
+##  Implementación de Autenticación con Firebase
+
+En esta actualización del proyecto, implementamos un sistema de autenticación de usuarios utilizando Firebase, con el objetivo de mejorar la seguridad y permitir el acceso controlado a la plataforma de la feria digital.
+
+###  Funcionalidades desarrolladas
+
+- Implementamos el registro de usuarios mediante correo electrónico y contraseña  
+- Configuramos el envío de verificación de correo al momento del registro  
+- Desarrollamos el inicio de sesión validando que el usuario haya verificado su correo  
+- Agregamos mensajes de alerta para guiar al usuario durante el proceso  
+
+###  Tecnologías utilizadas
+
+- Firebase Authentication  
+- JavaScript (ES Modules)  
+- HTML y CSS  
+
+###  Mejoras en la interfaz
+
+- Rediseñamos el formulario de inicio de sesión para hacerlo más organizado  
+- Aplicamos estilos modernos con CSS  
+- Mejoramos los botones con efectos interactivos (hover)  
+- Organizamos el diseño para que fuera más limpio y centrado  
+
+### Resultado
+
+Con esta implementación, logramos que el sistema permita registrar usuarios de forma segura, verificar sus correos electrónicos y controlar el acceso a la plataforma, mejorando la confiabilidad y el aspecto profesional del proyecto.
+
+--
+**Everaldy Ayala Usuga**
+**Alejandra Valencia Villa**
+**Alejandro Velasquez Machado**

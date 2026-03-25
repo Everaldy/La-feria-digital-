@@ -5,6 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Feria Digital Agropecuaria</title>
   <link rel="stylesheet" href="estilos.css" />
+ 
+  <div class="container">
+  <h2>Feria Digital </h2>
+
+  <input type="email" id="email" placeholder="Correo">
+  <input type="password" id="password" placeholder="Contraseña">
+
+  <div class="buttons">
+    <button id="btnRegister">Registrarse</button>
+    <button id="btnLogin">Iniciar Sesión</button>
+  </div>
+</div>
+
+  <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendEmailVerification
+} from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBYfeEHpGXBxy-r9kvd0CrX61G9TJs4ONg",
+  authDomain: "la-feria-86258.firebaseapp.com",
+  projectId: "la-feria-86258",
+  storageBucket: "la-feria-86258.firebasestorage.app",
+  messagingSenderId: "731736347739",
+  appId: "1:731736347739:web:bd981a2bf7b2e6e0845b7e",
+  measurementId: "G-X62W9JVXKB"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+
+//  REGISTRO
+document.getElementById("btnRegister").addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+
+      sendEmailVerification(user).then(() => {
+        alert(" Revisa tu correo para verificar tu cuenta");
+      });
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+});
+
+//  LOGIN
+document.getElementById("btnLogin").addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+
+      if (user.emailVerified) {
+        alert(" Bienvenido a la Feria Digital");
+      } else {
+        alert(" Verifica tu correo primero");
+      }
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+});
+
+</script>
 </head>
 
 <body>
@@ -13,6 +91,8 @@
 <header class="header">
   <h1>Feria Digital Agropecuaria</h1>
   <p>Explora cultivos, fotos, historias y contáctanos.</p>
+
+ 
 
   <!-- MENÚ DE NAVEGACIÓN -->
   <nav>
