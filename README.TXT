@@ -1,95 +1,66 @@
 # Feria Digital Agropecuaria
 
-## Descripción del proyecto
+## Descripcion
 
-Este proyecto consiste en una página web llamada **Feria Digital Agropecuaria**, en la cual se muestran algunos cultivos importantes como el café, cacao, plátano, aguacate y mango.
+Feria Digital Agropecuaria es una pagina web creada para presentar informacion sobre cultivos, galeria de imagenes, historias del campo, formulario de inscripcion y datos de contacto.
 
-La página permite explorar información sobre los cultivos, ver una galería de imágenes, conocer algunas historias del campo y realizar una inscripción.
-
-El objetivo del proyecto es mostrar de manera sencilla información sobre productos agrícolas y practicar el desarrollo de páginas web usando **HTML, CSS y JavaScript**.
+La version actual del proyecto incluye autenticacion con Firebase, de modo que primero se muestra la pantalla de inicio de sesion y, despues de ingresar correctamente, se desbloquea el contenido principal del sitio.
 
 ---
 
-## Tecnologías utilizadas
+## Mejoras recientes
 
-En el desarrollo del proyecto se utilizaron las siguientes tecnologías:
+- Se agrego una pantalla de inicio de sesion como primera vista.
+- El contenido principal ahora queda oculto hasta que el usuario inicie sesion.
+- Se implemento un boton de cerrar sesion.
+- Se mejoro el diseno visual del login con un fondo mas profesional, imagen agricola, efecto de transparencia y mejor jerarquia visual.
+- Se actualizaron botones y campos para que la interfaz se vea mas moderna y limpia.
+- Se mantuvieron las validaciones del formulario de inscripcion.
 
-* **HTML**: para la estructura de la página web.
-* **CSS**: para el diseño y los estilos visuales.
-* **JavaScript**: para agregar interactividad como botones, navegación entre secciones y validación del formulario.
+---
+
+## Tecnologias utilizadas
+
+- HTML
+- CSS
+- JavaScript
+- Firebase Authentication
 
 ---
 
 ## Funcionalidades
 
-La página cuenta con varias secciones:
-
-* **Tipo de cultivo:** muestra información e imágenes de diferentes cultivos como café, cacao, plátano, aguacate y mango.
-* **Galería de fotos:** muestra imágenes relacionadas con los cultivos.
-* **Historias:** sección donde se pueden agregar historias o experiencias del campo.
-* **Inscripción:** formulario donde los usuarios pueden registrarse.
-* **Contacto:** información de contacto del creador del proyecto.
-
-También incluye validaciones en el formulario para verificar la edad y el número de contacto.
+- Registro de usuarios con correo y contrasena.
+- Envio de correo de verificacion al registrarse.
+- Inicio de sesion con Firebase.
+- Cierre de sesion.
+- Visualizacion de secciones sobre cultivos.
+- Galeria de imagenes.
+- Historias de productores.
+- Formulario de inscripcion con validacion de edad y numero de contacto.
+- Seccion de contacto con enlace a correo y WhatsApp.
 
 ---
 
 ## Estructura del proyecto
 
-El proyecto está organizado de la siguiente manera:
+- `index.html`
+- `estilos.css`
+- `funciones.js`
+- `img/`
 
-index.html
-estilos.css
-funciones.js
-img/
-
-La carpeta **img** contiene las imágenes utilizadas en la página.
+La carpeta `img/` contiene las imagenes usadas en la pagina.
 
 ---
 
 ## Autores
 
-Proyecto realizado por:
-
-**Everaldy Ayala Usuga**
-**Alejandra Valencia Villa**
-**Alejandro Velasquez Machado**
+- Everaldy Ayala Usuga
+- Alejandra Valencia Villa
+- Alejandro Velasquez Machado
 
 ---
 
 ## Objetivo del proyecto
 
-El objetivo principal fue aprender a crear una página web interactiva utilizando tecnologías básicas de desarrollo web y mostrar información sobre productos del sector agropecuario.
-
-##  Implementación de Autenticación con Firebase
-
-En esta actualización del proyecto, implementamos un sistema de autenticación de usuarios utilizando Firebase, con el objetivo de mejorar la seguridad y permitir el acceso controlado a la plataforma de la feria digital.
-
-###  Funcionalidades desarrolladas
-
-- Implementamos el registro de usuarios mediante correo electrónico y contraseña  
-- Configuramos el envío de verificación de correo al momento del registro  
-- Desarrollamos el inicio de sesión validando que el usuario haya verificado su correo  
-- Agregamos mensajes de alerta para guiar al usuario durante el proceso  
-
-###  Tecnologías utilizadas
-
-- Firebase Authentication  
-- JavaScript (ES Modules)  
-- HTML y CSS  
-
-###  Mejoras en la interfaz
-
-- Rediseñamos el formulario de inicio de sesión para hacerlo más organizado  
-- Aplicamos estilos modernos con CSS  
-- Mejoramos los botones con efectos interactivos (hover)  
-- Organizamos el diseño para que fuera más limpio y centrado  
-
-### Resultado
-
-Con esta implementación, logramos que el sistema permita registrar usuarios de forma segura, verificar sus correos electrónicos y controlar el acceso a la plataforma, mejorando la confiabilidad y el aspecto profesional del proyecto.
-
---
-**Everaldy Ayala Usuga**
-**Alejandra Valencia Villa**
-**Alejandro Velasquez Machado**
+El objetivo principal fue aprender a crear una pagina web interactiva usando tecnologias basicas de desarrollo web, al mismo tiempo que se presentaba informacion del sector agropecuario de una forma visualmente atractiva y mas profesional.

@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="estilos.css" />
  
   <div class="container">
-  <h2>Feria Digital </h2>
-
+  <h2>Iniciar sesion</h2>
+  <p class="auth-copy">Ingresa tus datos para acceder al contenido.</p>
   <input type="email" id="email" placeholder="Correo">
   <input type="password" id="password" placeholder="Contraseña">
 
@@ -27,7 +27,9 @@ import {
   getAuth, 
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  sendEmailVerification
+  sendEmailVerification,
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -44,42 +46,64 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
-//  REGISTRO
-document.getElementById("btnRegister").addEventListener("click", () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+document.addEventListener("DOMContentLoaded", function () {
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.documentElement.classList.add("logged-in");
+    } else {
+      document.documentElement.classList.remove("logged-in");
+    }
+  });
 
-      sendEmailVerification(user).then(() => {
-        alert(" Revisa tu correo para verificar tu cuenta");
+  //  REGISTRO
+  document.getElementById("btnRegister").addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        sendEmailVerification(user).catch(() => {});
+        document.documentElement.classList.add("logged-in");
+        alert(" Cuenta creada. Ya puedes ingresar.");
+      })
+      .catch((error) => {
+        alert(error.message);
       });
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-});
+  });
 
-//  LOGIN
-document.getElementById("btnLogin").addEventListener("click", () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  //  LOGIN
+  document.getElementById("btnLogin").addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-
-      if (user.emailVerified) {
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        document.documentElement.classList.add("logged-in");
         alert(" Bienvenido a la Feria Digital");
-      } else {
-        alert(" Verifica tu correo primero");
-      }
-    })
-    .catch((error) => {
-      alert(error.message);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  });
+
+  const btnLogout = document.getElementById("btnLogout");
+
+  if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+      signOut(auth)
+        .then(() => {
+          document.documentElement.classList.remove("logged-in");
+          alert(" Sesion cerrada");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
     });
+  }
+
 });
 
 </script>
@@ -88,35 +112,28 @@ document.getElementById("btnLogin").addEventListener("click", () => {
 <body>
 
 <!-- ENCABEZADO DEL SITIO -->
-<header class="header">
-  <h1>Feria Digital Agropecuaria</h1>
-  <p>Explora cultivos, fotos, historias y contáctanos.</p>
 
  
 
-  <!-- MENÚ DE NAVEGACIÓN -->
-  <nav>
-    <ul class="menu">
+ <header class="hero-section">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Feria Digital Agropecuaria</h1>
+      <p>Explora cultivos, fotos, historias y contáctanos.</p>
+      
       <nav>
-<ul class="menu">
-
-<nav>
-<ul class="menu">
-
-<li><a href="#vista-inicio">Inicio</a></li>
-
-<li><a href="#vista-cultivo">Cultivos</a></li>
-
-<li><a href="#vista-galeria">Galería</a></li>
-
-<li><a href="#vista-historias">Historias</a></li>
-
-<li><a href="#vista-inscripcion">Inscripción</a></li>
-
-<li><a href="#vista-contacto">Contacto</a></li>
-
-</ul>
-</nav>
+        <ul class="menu">
+          <li><a href="#vista-inicio">Inicio</a></li>
+          <li><a href="#vista-cultivo">Cultivos</a></li>
+          <li><a href="#vista-galeria">Galería</a></li>
+          <li><a href="#vista-historias">Historias</a></li>
+          <li><a href="#vista-inscripcion">Inscripción</a></li>
+          <li><a href="#vista-contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <button id="btnLogout" class="btn-logout" type="button">Cerrar sesion</button>
+    </div>
+  </div>
 </header>
 
 <!-- CONTENIDO PRINCIPAL -->
